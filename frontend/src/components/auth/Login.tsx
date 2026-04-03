@@ -3,7 +3,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import api from '../../services/api';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Lock, User, AlertCircle, ArrowRight, ShieldCheck } from 'lucide-react';
+import { Lock, User, AlertCircle, ArrowRight, ShieldCheck, ChevronLeft } from 'lucide-react';
 
 const Login: React.FC = () => {
   const [username, setUsername] = useState('');
@@ -26,7 +26,7 @@ const Login: React.FC = () => {
         role: response.data.role 
       });
 
-      navigate('/');
+      navigate('/app');
     } catch (err: any) {
       setError(err.response?.data?.message || 'Invalid username or password');
     } finally {
@@ -46,6 +46,14 @@ const Login: React.FC = () => {
         transition={{ duration: 0.6, ease: [0.23, 1, 0.32, 1] }}
         className="max-w-md w-full glass-panel p-10 md:p-12 rounded-[2rem] shadow-[0_32px_64px_rgba(0,0,0,0.2)] border border-white/10 relative z-10 backdrop-blur-3xl"
       >
+        <Link 
+          to="/home" 
+          className="inline-flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-text-muted hover:text-indigo-500 transition-colors mb-8 group"
+        >
+          <ChevronLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
+          Back to Home
+        </Link>
+
         <div className="text-center mb-10">
           <motion.div 
             initial={{ scale: 0.8, rotate: -10 }}
@@ -136,7 +144,7 @@ const Login: React.FC = () => {
           <p className="text-text-muted text-[11px] font-medium">
             Don't have an account?
           </p>
-          <Link to="/register" className="text-sm font-bold text-indigo-500 hover:text-indigo-400 transition-colors">
+          <Link to="/home/registration" className="text-sm font-bold text-indigo-500 hover:text-indigo-400 transition-colors">
             Create Account
           </Link>
         </div>
