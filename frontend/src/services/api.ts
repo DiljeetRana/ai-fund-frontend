@@ -1,7 +1,10 @@
 import axios from 'axios';
 
-export const API_BASE = import.meta.env.VITE_API_URL || 
-  (import.meta.env.DEV ? 'https://localhost:44328' : 'https://ai-fund.onrender.com');
+if (!import.meta.env.VITE_API_URL) {
+  throw new Error('VITE_API_URL is not defined! Please check your environment variables.');
+}
+
+export const API_BASE = import.meta.env.VITE_API_URL;
 
 
 

@@ -111,16 +111,16 @@ const Dashboard: React.FC = () => {
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
             <path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0 0a8.25 8.25 0 01-13.803 3.7l3.181-3.182" />
           </svg>
-          Sync Intelligence
+          Teach AI New Things
         </button>
       </div>
 
       {/* Stats Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-        <StatCard title="Total Interactions" value={stats.totalQueries} detail="+12.5% vs LW" color="indigo" />
-        <StatCard title="Critical Gaps" value={stats.knowledgeGaps} detail="Requires Action" color="amber" />
-        <StatCard title="Avg Confidence" value={`${stats.avgConfidence}%`} detail="Target: 95%" color="emerald" />
-        <StatCard title="Active Users" value={stats.activeUsers} detail="Real-time" color="blue" />
+        <StatCard title="Total Conversations" value={stats.totalQueries} detail="+12.5% this week" color="indigo" />
+        <StatCard title="Unanswered Questions" value={stats.knowledgeGaps} detail="Needs your help" color="amber" />
+        <StatCard title="AI Accuracy" value={`${stats.avgConfidence}%`} detail="Getting Smarter" color="emerald" />
+        <StatCard title="Community Active" value={stats.activeUsers} detail="Real-time" color="blue" />
       </div>
 
       {/* Main Table */}
@@ -128,7 +128,7 @@ const Dashboard: React.FC = () => {
         <div className="px-8 py-6 border-b border-border-primary flex items-center justify-between">
           <h2 className="text-sm font-bold text-text-primary uppercase tracking-widest flex items-center gap-3">
             <span className="w-2 h-2 rounded-full bg-indigo-500" />
-            Active Knowledge Gaps
+            What the AI is learning
           </h2>
         </div>
 
@@ -136,8 +136,8 @@ const Dashboard: React.FC = () => {
           <table className="w-full text-left">
             <thead>
               <tr className="bg-bg-secondary/50 border-b border-border-primary">
-                <th className="px-10 py-5 text-[10px] font-bold text-text-muted uppercase tracking-widest">Question Segment</th>
-                <th className="px-10 py-5 text-[10px] font-bold text-text-muted uppercase tracking-widest">Confidence</th>
+                <th className="px-10 py-5 text-[10px] font-bold text-text-muted uppercase tracking-widest">Topic</th>
+                <th className="px-10 py-5 text-[10px] font-bold text-text-muted uppercase tracking-widest">Accuracy Rate</th>
                 <th className="px-10 py-5 text-[10px] font-bold text-text-muted uppercase tracking-widest">Status</th>
                 <th className="px-10 py-5 text-[10px] font-bold text-text-muted uppercase tracking-widest text-right">Actions</th>
               </tr>
@@ -182,7 +182,7 @@ const Dashboard: React.FC = () => {
                     </td>
                     <td className="px-10 py-6 text-right">
                       <button className="px-4 py-2 rounded-xl text-[10px] font-bold text-text-primary bg-bg-primary border border-border-primary hover:border-indigo-500/40 hover:text-indigo-500 transition-all active:scale-95">
-                        REFINE AI
+                        HELP AI RESPOND
                       </button>
                     </td>
                   </motion.tr>

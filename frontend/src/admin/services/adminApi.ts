@@ -10,10 +10,11 @@ import {
   TrendingQuery,
 } from '../types/admin.types';
 
-const API_BASE_URL = `${
-  import.meta.env.VITE_API_URL ||
-  (import.meta.env.DEV ? 'https://localhost:44328' : 'https://ai-fund.onrender.com')
-}/api`;
+if (!import.meta.env.VITE_API_URL) {
+  throw new Error('VITE_API_URL is not defined! Please check your environment variables.');
+}
+
+const API_BASE_URL = `${import.meta.env.VITE_API_URL}/api`;
 
 class AdminApiService {
   private api: AxiosInstance;
